@@ -1,5 +1,5 @@
 
-    var now = new Date();
+    let now = new Date(document.lastModified);
     let monthNames =['January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'];
     var thisMonth = monthNames[now.getMonth()-1];
