@@ -1,0 +1,28 @@
+@media only screen and (min-width: 32.5em) {
+
+    h1 {
+        font-size: 3rem;
+        padding: .5rem;
+        text-shadow: -.265vh -.265vh .2vh rgba(255, 199, 44, 0.9);
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    header img {
+        float: right;
+        max-width: 20%;
+        margin-top: 0em;
+        margin-right: 20px;
+        box-shadow: 15px 10px 5px rgba(100, 100, 100, 0.8);
+    }
+
+    header, footer {
+        border-radius: 15px;
+    }
+
+    header, main, footer, nav {
+        min-width: 62.5vw;
+    }
+}

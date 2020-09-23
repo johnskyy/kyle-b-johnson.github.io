@@ -1,21 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,500;1,600&family=Raleway:wght@300&display=swap");
 
 body {
-    background-color: ivory;
+    background-color: #fffef0;
     font-size: 18px;
+    height: 100%;
 }
 
 header, main, footer {
-    margin: 1.25em auto;
-    min-width: 640px;
-    max-width: 960px;
+    margin: 0 auto;
+    max-width: 45rem;
+}
+
+h1 {
+    font-size: 1.75em;
+    margin: 0.15rem;
+    text-shadow: -.14vh -.16vh .1vh rgba(255, 199, 44, 0.9);
 }
 
 header, footer {
     padding: 1rem;
-    background-color: #00552a;
-    color: #e3e3e3;
-    border-radius: 15px;
+    background-color: #114E31;
+    color: #fffef0;
     font-family: 'Playfair Display', serif;
     text-align: center;
 }
@@ -33,14 +38,28 @@ main {
 }
 
 img {
-    float: right;
-    margin-top: -4em;
-    margin-right: 20px;
     z-index: 0;
-    max-width: 20%;
-    box-shadow: 15px 10px 5px rgba(100, 100, 100, 0.8);
+    max-width: 100%;
+    max-height: 20vh;
+    margin-top: .5em;
 }
 
 footer {
-    line-height: .75rem;
+    line-height: 1.5rem;
+}
+
+a:link {
+    color: #003b1c;
+}
+
+a:visited {
+    color: #361f36;
+} 
+
+a:visited {
+    color: #361f36;
+}
+
+footer a:visited {
+    color: #ffffff;
 }
