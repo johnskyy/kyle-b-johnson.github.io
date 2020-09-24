@@ -49,16 +49,13 @@ footer {
 }
 
 a:link {
-    color: #003b1c;
+    color: #ffd76a;
 }
 
 a:visited {
     color: #361f36;
 } 
 
-a:visited {
-    color: #361f36;
-}
 
 footer a:visited {
     color: #ffffff;
