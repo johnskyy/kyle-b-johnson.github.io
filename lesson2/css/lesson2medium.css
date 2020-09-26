@@ -1,0 +1,37 @@
+@media only screen and (min-width: 32.5em) {
+  #content,
+  nav,
+  header {
+    box-shadow: -10px 15px 5px rgba(120, 120, 120.5),
+      10px 15px 5px rgba(120, 120, 120.5);
+    max-width: 960px;
+  }
+
+  nav ul {
+    grid-template-rows: unset;
+    grid-template-columns: 0.75fr 1fr 1.25fr;
+  }
+
+  .image-grid {
+      grid-template-rows: unset;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+  #nav-link1,
+  .img1 {
+      grid-row: unset;
+    grid-column: 1/2;
+  }
+
+  #nav-link2,
+  .img2 {
+    grid-row: unset;
+    grid-column: 2/3;
+  }
+
+  #nav-link3,
+  .img3 {
+    grid-row: unset;
+    grid-column: 3/4;
+  }
+}
