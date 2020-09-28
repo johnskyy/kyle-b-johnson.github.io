@@ -9,7 +9,11 @@
 
   nav ul {
     grid-template-rows: unset;
-    grid-template-columns: 0.75fr 1fr 1.25fr;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: unset;
+    margin: unset;
   }
 
   .image-grid {
