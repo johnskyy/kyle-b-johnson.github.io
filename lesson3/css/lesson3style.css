@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400;1,500;1,600&family=Raleway:wght@300&display=swap");
+
+body {
+  background-color: #fffef0;
+}
+
+#content,
+nav,
+header {
+  margin: 0 auto;
+}
+
+header {
+  padding: 24px 0;
+}
+
+#content {
+  background-color: #fffff9;
+}
+
+nav {
+  padding: 16px 0;
+  background-color: maroon;
+  width: 100%;
+}
+
+nav ul li {
+  list-style: none;
+  display: block;
+  padding: unset;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  color: maroon;
+}
+
+main {
+  margin: 0 32px;
+}
+
+main a, footer a {
+  color: maroon;
+  padding: .25em;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(255, 255, 255, 0.95);
+  background-color: maroon;
+}
+
+h1,
+h2 {
+  font-family: "Playfair Display", Times, serif;
+  margin: unset;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+}
+
+#button-space {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+button {
+  text-align: center;
+}
+
+nav a,
+h3,
+p {
+  font-family: "Raleway", "Arial", sans-serif;
+}
+
+h2 {
+  padding-bottom: 16px;
+  font-size: 32px;
+}
+
+main h2,
+a {
+  text-align: left;
+  line-height: 1.25em;
+}
+
+h3 {
+  text-align: left;
+  font-size: 24px;
+}
+
+hr {
+  margin: 2em auto;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.75em;
+}
+
+#logo img {
+  width: 350px;
+  display: flex;
+}
+
+
+footer {
+  padding-top: 30px;
+  text-align: center;
+  line-height: 0.5em;
+  font-size: 0.75em;
+}
+
+body {
+  padding-bottom: 30px;
+}

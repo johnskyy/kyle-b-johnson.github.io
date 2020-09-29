@@ -1,0 +1,16 @@
+@media only screen and (min-width: 550px) {
+  #content,
+  nav,
+  header {
+    max-width: 960px;
+  }
+
+  nav ul {
+    display: flex;
+    padding: unset;
+    justify-content: space-around;
+    flex-flow: row;
+    text-align: left;
+  }
+
+}

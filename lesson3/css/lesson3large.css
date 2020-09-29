@@ -1,0 +1,21 @@
+@media only screen and (min-width: 1000px ) {
+  #content,
+  nav,
+  header {
+    box-shadow: -10px 15px 5px rgba(120, 120, 120.5),
+      10px 15px 5px rgba(120, 120, 120.5);
+    max-width: 960px;
+  }
+
+  nav ul {
+    padding: unset;
+    justify-content: space-around;
+    flex-flow: row;
+  }
+
+  #logo img {
+    justify-content: space-around;
+    align-content: space-between;
+  }
+
+}

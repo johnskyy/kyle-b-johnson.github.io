@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/lesson3large.css" />
+    <link rel="stylesheet" href="css/lesson3medium.css" />
+    <link rel="stylesheet" href="css/lesson3style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Website Planning Document</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="target-audience.html">Target Audience</a></li>
+        <li><a href="#">Colors</a></li>
+        <li><a href="typography.html">Typography</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <main>
+        <h2>Color Scheme</h2>
+        <p>This is an example page using my intended color scheme. Click button
+        below to show intended color scheme.</p>
+
+        <div id="button-space">
+        <button onclick="changeColor()" >Show Color Scheme</button>
+      </div>
+      </main>
+
+      <script src="scripts/color-changer.js"></script>
+      <footer>
+        <p>
+          &copy; | Kyle Johnson | Missouri |
+          <a href="https://www.byui.edu/online">BYUI Online Learning</a>
+        </p>
+        <p>Last updated: <span id="datePlace"></span></p>
+        <script src="../scripts/update-date.js"></script>
+      </footer>
+    </div>
+  </body>
+</html>
