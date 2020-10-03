@@ -5,6 +5,17 @@
     max-width: 960px;
   }
 
+  #logo {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  #logo img {
+    max-width: 350px;
+
+    border-radius: 45px;
+  }
+
   nav ul {
     display: flex;
     padding: unset;
@@ -12,5 +23,4 @@
     flex-flow: row;
     text-align: left;
   }
-
 }

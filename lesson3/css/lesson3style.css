@@ -50,9 +50,10 @@ main {
   margin: 0 32px;
 }
 
-main a, footer a {
+main a,
+footer a {
   color: maroon;
-  padding: .25em;
+  padding: 0.25em;
   border-radius: 4px;
   text-decoration: none;
 }
@@ -63,7 +64,8 @@ a:hover {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Playfair Display", Times, serif;
   margin: unset;
 }
@@ -87,7 +89,8 @@ button {
 
 nav a,
 h3,
-p {
+p,
+ol {
   font-family: "Raleway", "Arial", sans-serif;
 }
 
@@ -115,12 +118,14 @@ p {
   font-size: 20px;
   line-height: 1.75em;
 }
+#logo {
+  padding-top: 1em;
+}
 
 #logo img {
   width: 350px;
-  display: flex;
+  display: block;
 }
-
 
 footer {
   padding-top: 30px;
