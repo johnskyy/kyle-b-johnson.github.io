@@ -38,6 +38,10 @@
             line-height: 2.5em;
         }
 
+        .navigation li {
+            display:flex
+        }
+
     .navigation li:first-child {
         display: none;
     }
