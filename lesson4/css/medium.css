@@ -48,11 +48,24 @@
 
       #forecast-imgs {
         padding: unset;
-        display: flex;
+        /* display: flex;
         justify-content: space-around;
         flex-flow: row;
-        text-align: left;
+        text-align: left; */
+
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-template-rows: auto auto;
       }
+
+      #forecast-imgs img {
+          grid-template-rows: 1/2;
+      }
+
+      #forecast-imgs p {
+          grid-template-rows: 2/3;
+      }
+
 
       footer img {
           max-width: 40%;
