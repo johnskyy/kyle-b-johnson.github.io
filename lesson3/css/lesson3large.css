@@ -7,11 +7,12 @@
     max-width: 960px;
   }
 
-  nav ul {
-    padding: unset;
-    justify-content: space-around;
-    flex-flow: row;
-  }
+  nav ul li a {
+    font-size: 24px;
+    padding: 4px;
+    line-height: 2.5em;
+}
+
 
   #logo img {
     justify-content: space-around;

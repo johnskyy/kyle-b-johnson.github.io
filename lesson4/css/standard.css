@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Special+Elite&display=swap');
+
+header, nav, main, footer {
+    margin: 0 auto;
+}
+
+main {
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header h1, nav ul, h2 {
+    font-family: 'Special ELite', monospace;
+}
+
+#banner img {
+    max-width: 100%;
+}
+
+h1, h2, h3 {
+    margin-left: 1em;
+}
+
+p {
+    margin: auto 1em;
+}
+
+header h1{
+    justify-content: center;
+}
+
+header img {
+    max-width: 20%;
+}
+
+.navigation {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li:first-child {
+    display:block;
+}
+
+.navigation li {
+    display: none;
+}
+
+.responsive li {
+    display: block;
+}
+
+nav ul{
+    margin: unset;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: #EEE8EC;
+    padding: 4px;
+}
+
+nav ul li {
+  list-style: none;
+  display: block;
+  padding: unset;
+  text-align: center;
+  line-height: 2.5em;
+}
+
+h1, h2, h3, p {
+    color: #470040;
+}
+
+#forecast-imgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+
+}
+#forecast-imgs img{
+    margin: 16px auto 8px auto;
+}
+
+p {
+    font-family: 'Lexend Giga', Georgia, serif;
+    line-height: 1.25em;
+}
+
+
+body {
+    background-color: #D0DD97;
+}
+
+nav {
+    background-color: #658361;
+    border-radius: 10px;
+}
+
+#article {
+    display: block;
+}
+
+
+.light-background {
+    background-color: #EEE8EC;
+    padding: 5px 0;
+}
+
+footer {
+    max-width: 100%;
+    padding: 2em;
+    background-color: #658361;
+    display: float;
+}
+
+footer #contact {
+    float:right;
+}
+
+footer p {
+    color: #EEE8EC;
+}
+
+a:hover {
+    color: #658361 ;
+    background-color: #FFB845;
+    border-radius: 4px;
+}
+
+footer a:hover {
+    background-color: #D0DD97;
+}
+
