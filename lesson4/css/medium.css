@@ -58,13 +58,6 @@
         grid-template-rows: auto auto;
       }
 
-      #forecast-imgs img {
-          grid-template-rows: 1/2;
-      }
-
-      #forecast-imgs p {
-          grid-template-rows: 2/3;
-      }
 
 
       footer img {
