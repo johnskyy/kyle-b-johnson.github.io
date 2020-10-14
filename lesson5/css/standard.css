@@ -8,6 +8,10 @@ main {
     max-width: 100%;
 }
 
+#info-banner {
+    display: block;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -47,22 +51,26 @@ header img {
 }
 
 .navigation li {
-    display: none;
+    display: block;
 }
 
 .responsive li {
-    display: block;
+    display: none;
 }
 
 nav ul{
     margin: unset;
     list-style: none;
+    font-size: 1.5em;
 }
 
 nav a {
     text-decoration: none;
-    color: #EEE8EC;
-    padding: 4px;
+    color: #EEE8EC;    
+}
+
+.active a {
+    color: #470040;
 }
 
 nav ul li {
@@ -70,7 +78,7 @@ nav ul li {
   display: block;
   padding: unset;
   text-align: center;
-  line-height: 2.5em;
+  line-height: 2em;
 }
 
 h1, h2, h3, p {
@@ -138,5 +146,6 @@ a:hover {
 footer a:hover {
     background-color: #D0DD97;
 }
+
 
 
