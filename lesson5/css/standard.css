@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Special+Elite&display=swap');
 
-header, nav, main, footer {
+header, nav, main, footer, #info-banner {
     margin: 0 auto;
 }
 
@@ -10,6 +10,10 @@ main {
 
 #info-banner {
     display: block;
+    max-width: 100%;
+    background-color: #EEE8EC;
+    text-align: center;
+    border-radius: .5em;
 }
 
 header {
@@ -97,7 +101,7 @@ h1, h2, h3, p {
     margin: 16px auto 8px auto;
 }
 
-p {
+p, #info-banner {
     font-family: 'Lexend Giga', Georgia, serif;
     line-height: 1.25em;
 }
