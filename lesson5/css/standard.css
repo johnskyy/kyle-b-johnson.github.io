@@ -29,6 +29,11 @@ header h1, nav ul, h2 {
     max-width: 100%;
 }
 
+#banner #summary {
+    background-color: rgba(238,232,236, 1) ;
+    margin: 1em 0;
+}
+
 h1, h2, h3 {
     margin-left: 1em;
 }
