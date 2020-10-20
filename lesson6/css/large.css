@@ -1,0 +1,19 @@
+@media only screen and (min-width: 60em) {
+    #banner {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto;
+}
+
+#banner #summary {
+    grid-column: 1/2;
+    margin: 1em 2em;
+    grid-row: 1/2;
+    background-color: rgba(238,232,236, .7) ;
+}
+
+#banner picture {
+    grid-column: 1/-1;
+    grid-row: 1/2;
+}
+}
