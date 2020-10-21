@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="css/medium.css" />
     <link rel="stylesheet" href="css/large.css" />
     <link rel="shortcut icon" href="images/favicon.png" />
-    <script src="js/windchill.js"></script>
+
   </head>
-  <body>
+  <body onload="getWeather('preston');">
     <div id="content">
       <span id="info-banner"></span>
       <header>
@@ -37,14 +37,14 @@
           <!-- large: 960px, medium: 720px, small 540px -->
           <picture>
             <source srcset="images\wdd230_image_franklinLarge.jpg" media="(min-width: 60em)">
-            <source srcset="images\wdd230_image_franklinMedium.jpg" media="(min-width: 45em) and (max-width: 59em)">
+            <source srcset="images\wdd230_image_franklinMedium.jpg" media="(min-width: 45em) and (max-width: 59.9em)">
             <img src="images/wdd230_image_franklinSmall.jpg" alt="Week 6 required hero image">
           <!-- <img -->
             <!-- src="https://loremflickr.com/960/300/farm,field,crops/all" -->
             <!-- alt="Randomly generated farm related image" -->
           <!-- /> -->
         </picture>
-          <div id="summary" lang="zxx" onload="getWeather(preston);">
+          <div id="summary" lang="zxx" >
             <h3>Weather Summary</h3>
             <table>
               <tr>
@@ -158,7 +158,7 @@
 
       <script src="js/weather.js"></script>
       <script src="js/saturday.js"></script>
-      
+      <script src="js/windchill.js"></script>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>

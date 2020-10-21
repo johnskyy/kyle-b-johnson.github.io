@@ -7,7 +7,7 @@
 
 #banner #summary {
     grid-column: 1/2;
-    margin: 1em 2em;
+    margin: 2em 2em 12em 2em;
     grid-row: 1/2;
     background-color: rgba(238,232,236, .7) ;
 }

@@ -26,12 +26,19 @@ header h1, nav ul, h2 {
 }
 
 #banner picture {
-    max-width: 100%;
+    width: 100%;
 }
 
 #banner #summary {
     background-color: rgba(238,232,236, 1) ;
     margin: 1em 0;
+    font-family: 'Lexend Giga', Georgia, serif;
+
+}
+
+#summary h3 {
+    text-align: center;
+    margin-left:unset;
 }
 
 h1, h2, h3 {
