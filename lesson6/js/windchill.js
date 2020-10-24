@@ -80,8 +80,14 @@ function getNOAAData(url){
     // do {} while  ((response code) < 200 && (response code) > 299)
 
     var noaaHTTP =new XMLHttpRequest();
+    var noaaData;
     //noaaHTTP.addEventListener("load", callBack);
+    do{
     noaaHTTP.open("GET", url, false);
     noaaHTTP.send(null);
-    return JSON.parse(noaaHTTP.responseText);
+    noaaData = JSON.parse(noaaHTTP.responseText);
+    }
+    while (noaaData.status < 200 || noaaData.status > 299);
+
+    return noaaData;
 }
