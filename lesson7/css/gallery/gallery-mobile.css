@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Giga&family=Special+Elite&display=swap');
+
+/*************************************************
+*** 
+***     MAIN/GENERAL CONTENT Rules
+***
+*************************************************/
+
+header, nav, main, footer, #info-banner {
+    margin: 0 auto;
+}
+
+main {
+    max-width: 100%;
+}
+
+/*************************************************
+*** 
+***     Font Rules
+***
+*************************************************/
+
+p, #info-banner, email {
+    font-family: 'Lexend Giga', Georgia, serif;
+    line-height: 1.25em;
+}
+
+header h1, nav ul, h2 {
+    font-family: 'Special ELite', monospace;
+}
+
+footer p, email {
+    color: #EEE8EC;
+}
+
+h1, h2, h3, p {
+    color: #470040;
+}
+
+h1, h2, h3 {
+    margin-left: 1em;
+}
+
+p {
+    margin: auto 1em;
+}
+
+/*************************************************
+*** 
+***     IMAGES/PICTURES Rules
+***
+*************************************************/
+
+footer img {
+    max-width: 45%;
+    margin: 1.5em;
+}
+
+#forecast-imgs img{
+    margin: 16px auto 8px auto;
+}
+
+header img {
+    max-width: 20%;
+}
+
+#banner picture, #banner source, #banner img {
+    min-width: 100%;
+    max-width: 100%;
+}
+
+#article img {
+   margin: 1em 25%;
+   border-radius: 10px;
+}
+
+/*************************************************
+*** 
+***     Link Handling/Formatting Rules
+***
+*************************************************/
+
+a:hover {
+    color: #658361 ;
+    background-color: #FFB845;
+    border-radius: 4px;
+}
+
+footer a:hover {
+    background-color: #D0DD97;
+}
+
+nav a {
+    text-decoration: none;
+    color: #EEE8EC;    
+}
+
+.active a {
+    color: #470040;
+}
+
+/****************************************
+***
+*** Navigation
+***
+*****************************************/
+
+.navigation {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li:first-child {
+    display:block;
+}
+
+.responsive li {
+    display: none;
+}
+
+nav ul{
+    margin: unset;
+    list-style: none;
+    font-size: 1.5em;
+}
+
+nav ul li {
+  list-style: none;
+  display: block;
+  padding: unset;
+  text-align: center;
+  line-height: 2em;
+}
+
+nav {
+    background-color: #658361;
+    border-radius: 10px;
+}
+
+/*************************************************/
+
+#gallery img {
+    min-width: 300px;
+    min-height: 200px;
+    filter: blur(2px);
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header h1{
+    justify-content: center;
+}
+
+body {
+    background-color: #D0DD97;
+}
+
+.light-background {
+    background-color: #EEE8EC;
+    padding: 5px 0;
+}
+
+footer {
+    max-width: 100%;
+    background-color: #658361;
+}
+
+#map {
+    max-width: 50%;
+}
+
+#contact {
+    margin: 10vh 1em;
+}

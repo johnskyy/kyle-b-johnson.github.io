@@ -1,0 +1,71 @@
+@media only screen and (min-width: 45em) {
+    /***********************************
+    **
+    **  Article grid
+    **
+    ************************************/
+
+        #article {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 3em 250px auto;
+        }
+
+        
+        #article h3 {
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+
+        #article p {
+            grid-column: 1/2;
+            grid-row: 2/4;
+        }
+
+        #article img {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+
+    /******************************************/
+     
+    
+    
+    header, nav, main, footer, #info-banner {
+        max-width: 960px;
+    }
+
+      
+
+      nav ul {
+          display: flex;
+          justify-content: space-around;
+        }
+
+        nav a {
+            padding: 4px;
+            line-height: 2.5em;
+            padding: 4px;
+            font-weight: 500;
+        }
+
+        .navigation li {
+            display:flex
+        }
+
+    .navigation li:first-child {
+        display: none;
+    }
+
+      #forecast-imgs {
+        padding: unset;
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+      }
+
+      #contact {
+        float:right;
+        max-width: 50%;
+      }
+
+}

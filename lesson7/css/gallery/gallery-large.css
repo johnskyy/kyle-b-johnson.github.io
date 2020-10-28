@@ -1,0 +1,11 @@
+@media only screen and (min-width: 60em) {
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, auto);
+}
+
+img:hover {
+    box-shadow: 5px 3px rgba(e0, ef, e0, 0.7);
+}
+}

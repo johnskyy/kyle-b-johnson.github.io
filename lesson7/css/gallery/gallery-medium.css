@@ -1,0 +1,55 @@
+@media only screen and (min-width: 45em) {
+
+    /****************************************
+    ***
+    *** Navigation
+    ***
+    *****************************************/
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      nav a {
+          padding: 4px;
+          line-height: 2.5em;
+          padding: 4px;
+          font-weight: 500;
+      }
+
+      .navigation li {
+          display:flex
+      }
+
+    .navigation li:first-child {
+      display: none;
+    }
+
+    /****************************************
+    ***
+    ***
+    ***
+    *****************************************/
+
+    header, nav, main, footer, #info-banner {
+        max-width: 1080px;
+    }
+
+    #gallery {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(5,auto);
+        grid-gap: 2.5em;
+    }
+
+    #gallery img:hover {
+        box-shadow: 5px 3px rgba(e0,ef,e0,.8);
+    }
+
+    #contact {
+        float:right;
+        max-width: 50%;
+    }
+
+}
