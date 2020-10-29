@@ -52,12 +52,7 @@ p {
 *************************************************/
 
 footer img {
-    max-width: 45%;
-    margin: 1.5em;
-}
-
-#forecast-imgs img{
-    margin: 16px auto 8px auto;
+    margin: .5em;
 }
 
 header img {
@@ -69,10 +64,6 @@ header img {
     max-width: 100%;
 }
 
-#article img {
-   margin: 1em 25%;
-   border-radius: 10px;
-}
 
 /*************************************************
 *** 
@@ -139,10 +130,28 @@ nav {
 
 /*************************************************/
 
+#gallery {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, auto);
+    gap: 2em;
+    padding-bottom: 2em;
+}
+#gallery div {
+    justify-self: center;
+    align-items: center;
+}
+
 #gallery img {
     min-width: 300px;
     min-height: 200px;
-    filter: blur(2px);
+    max-width: 350px;
+}
+
+img[data-src] {
+    filter: blur(3px);
 }
 
 
@@ -167,12 +176,20 @@ body {
 footer {
     max-width: 100%;
     background-color: #658361;
-}
-
-#map {
-    max-width: 50%;
+    display: grid;
+    grid-template-columns: repeat (2,1fr);
+    justify-items: center;
+    align-items: center;
 }
 
 #contact {
-    margin: 10vh 1em;
+    margin: 1vh 1em;
+}
+
+#gallery p {
+    background-color: #EEE8EC;
+    width: 100%;
+    padding: .5em 0;
+    margin:unset;
+    text-align: center;
 }
