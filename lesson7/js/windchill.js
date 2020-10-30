@@ -55,7 +55,7 @@ function getWeather(town) {
     document.getElementById("temp").innerHTML =  temp + "&#176 F";
     document.getElementById("wind-speed").innerHTML = windSpeed;
     
-    if (parseInt(temp) < 50 && parseInt(windSpeed) > 3 ){
+    if (parseInt(temp) < 51 && parseInt(windSpeed) > 2 ){
         document.getElementById("wind-chill").innerHTML = 
         getWindChill(parseInt(temp), parseInt(windSpeed)) + "&#176 F";
     }
