@@ -1,0 +1,15 @@
+main {
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+img {
+    min-width: 250px;
+    min-height: 300px;
+    padding: 3em;
+}
+
+img[data-src] {
+    filter: blur(10px);
+}
