@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+  <title>Preston, ID | SpudWeather</title>
+  <link rel="stylesheet" href="../normalize.css" />
+  <link rel="stylesheet" href="css/standard.css" />
+  <link rel="stylesheet" href="css/medium.css" />
+  <link rel="stylesheet" href="css/large.css" />
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+</head>
+
+<body>
+  <div id="content">
+    <span id="info-banner"></span>
+    <header>
+      <img src="images/logo_transparent.png" alt="SpudWeather logo" />
+      <h1>SpudWeather</h1>
+    </header>
+    <nav>
+      <ul class="navigation responsive">
+        <li><a class="ham" href="#">&#9776; Menu</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="preston-7.html">Preston</a></li>
+        <li><a href="soda-springs-6.html">Soda Springs</a></li>
+        <li><a href="fish-haven-6.html">Fish Haven</a></li>
+        <li class="active"><a href="#">Storm Center</a></li>
+        <li><a href="gallery-7.html">Gallery</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div id="title">
+        <h2>Storm Center</h2>
+      </div>
+
+      <form method="GET" action="thanks.html">
+      <fieldset>
+        <legend>Contact Info</legend>
+      <!-- The form page must contain the following elements, types and attributes:
+        full name using input of type text and is required and only accepts alpha characters 
+        with a minimum of five characters using a regular expression pattern -->
+      <label class="top">Full Name*<input type="text" name="fname" pattern="[a-zA-Z]+" minlength="5" required></label>
+      <!-- email using input of type email and use a placeholder to provide a demo email -->
+      <label class="top">Email<input type="email" name="email" placeholder="demo@emailsite.com"></label>
+      <!-- phone number using input of type tel and is required-->
+      <label class="top">Phone Number*<input type="tel" name="phone" required></label>
+      <!--zip code using input of type number and is required-->
+      <label class="top">Zip Code*<input type="number" name="zip" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Storm Info</legend>
+      <!-- storm date using input of type date-->
+      <label class="top">Storm Date<input type="date"></label>
+
+      <!-- storm type using input with a list attribute referencing a datalist 
+      of suggestions that include "Flash Flood," "Hail," "Hurricane," "Thunderstorm," 
+      and "Tornado."-->
+      <label class="top">Storm Type<input list="storm-type" name="type"></label> 
+
+      <datalist id="storm-type">
+        <option value="Flash Flood"></option>
+        <option value="Hail"></option>
+        <option value="Hurricane"></option>
+        <option value="Thunderstorm"></option>
+        <option value="Tornado"></option>
+      </datalist>
+
+      <!-- storm severity using type range (1 to 10) with a corresponding label that 
+        indicates the current range value from 1 to 10.-->
+      <!-- Hint: See the Pen HTML Form example objects (Links to an external site.)-->
+        <label class="top">Storm Severity<input type="range" name="severity" min="1" max="10"></label>
+
+      <!-- storm region using select with drop-down options of "Preston", "Soda Springs", 
+        and "Fish Haven".-->
+      <!-- Add a first option with the text "Select Region ..." that is shown by default 
+        but not selectable (disabled).-->
+      <!-- The rest of the options should have relevant value attributes.-->
+
+      <label class="top">
+        Storm Region
+        <select name="region">
+          <option disabled default>Select Region ...</option>
+          <option>Preston</option>
+          <option>Soda Springs</option>
+          <option>Fish Haven</option>
+        </select>
+      </label>
+
+      <!-- user in-danger level using input of type radio with options and values of "yes," "maybe," and "no."-->
+
+      <div>Danger Level</div>
+      <label class="sbs"><input type="radio" name="danger" value="yes">Yes</label>
+      <label class="sbs"><input type="radio" name="danger" value="maybe">Maybe</label>
+      <label class="sbs"><input type="radio" name="danger" value="no">No</label>
+
+      <!-- additional information or comments using a textarea-->
+    <label class="top">Comments<textarea rows="4" cols="50" name="comments" placeholder="Enter additional information or comments here."></textarea></label>
+    
+    
+      
+    </fieldset>
+      <!-- form submission button using input of type submit-->
+<input type="submit" value="Send Weather Report" class="submitBtn">
+
+      <!-- Each field element should have an appropriate name attribute-->
+      
+      <!-- Ensure that the design meets standards such as eye tracking in a straight line and proper keyboard progression for accessibility. See Designing more Efficient Forms (Links to an external site.)-->
+      <!-- Create a new page labeled "thanks.html" that expresses gratitude for filling out the form. This page should load when the user has successfully submitted the form.
+        Hint: Review the <form> attributes. -->
+
+
+        </form>
+
+    </main>
+    <footer>
+      <div id="map">
+        <img src="https://loremflickr.com/400/200/Idaho,Wyoming,map/all" alt="Map of SpuadWeather's area" />
+      </div>
+      <div id="contact">
+        <p>Address: Lorem ipsum dolor sit amet.</p>
+        <p>Telephone: (208) 867-5309</p>
+        <email> Email: lorem@ipsum.info</email>
+        <span id="social"></span>
+      </div>
+    </footer>
+    <script src="js/lazyload.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: [
+            'Special Elite', 'Lexend Giga'
+          ]
+        }
+      })
+    </script>
+</body>
+
+</html>

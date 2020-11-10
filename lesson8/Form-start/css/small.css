@@ -66,6 +66,7 @@ form fieldset {
     border: 1px solid #445ba9;
     border-radius: 10px;
     padding: .5rem 2%;
+    
 }
 
 form legend {
@@ -82,7 +83,7 @@ form label.top, form div {
 }
 
 form label.top input, form label.top select {
-    -webkit-appearance: none;
+    appearance: none;
     display: block;
     font-size: 1rem;
     border: solid 1px #999;
@@ -91,7 +92,7 @@ form label.top input, form label.top select {
     color: #555;
     width: 100%;
     max-width: 20rem;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 form label.sbs {

@@ -87,7 +87,122 @@ nav a {
     color: #470040;
 }
 
+
+/*************************************************
+*** 
+***     Form Formatting Rules
+***
+*************************************************/
+form {
+    background-color: #EEE8EC;
+    border-radius: 10px;
+}
+
+form fieldset {
+    margin: 2rem 0;
+    border: 1px solid #445ba9;
+    border-radius: 10px;
+    padding: .5rem 2%;
+    
+}
+
+form legend {
+    color: #445ba9;
+    margin: 0 1rem;
+    padding: 0 .5rem;
+}
+
+form label.top, form div {
+    display: block;
+    padding-top: 1rem;
+    color: #9c2c13;
+    font-size: .8rem;
+}
+
+form label.top input, form label.top select {
+    appearance: none;
+    display: block;
+    font-size: 1rem;
+    border: solid 1px #999;
+    border-radius: 4px;
+    padding: .75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+form label.sbs {
+    display: block;
+    padding: .75rem 0;
+    color: #555;
+}
+
+form input.submitBtn {
+    border: none;
+    background-color: #9c2c13;
+    color: white;
+    border-radius: 1rem;
+    padding: .75rem 1.5rem;
+    margin: 0 0 2rem 2%;
+    width: 96%;
+    max-width: 20rem;
+}
+
+form label.top input:required {
+    border-left: red solid 6px;
+}
+
+form label.top input:required:valid {
+    border-left: green solid 6px;
+}
+
+
+/************************************************
+***
+***     Gallery
+***
+*****************************************/
+
+#gallery {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr)); 
+    gap:20px;
+    overflow: auto;
+    /* grid-template-rows: repeat(9, auto); */
+    padding-bottom: 2em;
+}
+#gallery div {
+    justify-items: center;
+    align-items: center;
+}
+
+#gallery img {
+    min-width: 325px;
+    min-height: 200px; 
+    max-width: 325px;
+}
+
+#gallery p {
+    background-color: #EEE8EC;
+    width: 100%;
+    padding: .5em 0;
+    margin:unset;
+    text-align: center;
+    max-width: 325px;
+    justify-self: center;
+}
+
+img[data-src] {
+    filter: blur(3px);
+}
+ 
+
 /*************************************************/
+
+
 
 
 #info-banner {
@@ -202,11 +317,11 @@ footer {
 }
 
 #map {
-    max-width: 45%;
+    /* max-width: 45%; */
 }
 
 #contact {
     margin: 1vh 1em;
-    max-width: 45%;
+    /* max-width: 45%; */
 }
 
