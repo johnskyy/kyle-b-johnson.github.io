@@ -47,13 +47,7 @@
 
    
 
-    #map {
-        grid-column: 1/2;
-    }
-
-    #contact {
-        grid-column: 2/3;
-    }
+    
 
     .gallery-1 {
         grid-row: 1/2;
@@ -100,6 +94,30 @@
         grid-column: 2/3;
       }
 
+    /****************************************
+    ***
+    ***     Footer formatting
+    ***
+    *****************************************/
+    footer {
+      display: grid;
+      max-width: 100%;
+      background-color: #658361;
+      grid-template-columns: 1fr 1fr;
+  }
+
+
+  #map {
+      grid-column: 1/2;
+      place-self: center;
+  }
+
+  #contact {
+      grid-column: 2/3;
+      place-self: center;
+  }
+
+
     /******************************************/
      
     
@@ -134,11 +152,6 @@
         padding: unset;
         display: grid;
         grid-template-columns: repeat(5,1fr);
-      }
-
-      #contact {
-        float:right;
-        max-width: 45%;
       }
 
 }

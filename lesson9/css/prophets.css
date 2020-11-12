@@ -1,0 +1,54 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: ivory;
+}
+
+h1, h2, p, footer {
+    text-align: center;
+}
+
+main {
+    display: grid;
+}
+
+section {
+    border: 1px solid rgb(43,43,86);
+    box-shadow: 5px 5px 5px rgba(24,24,48);
+    /* place-self: center; */
+    display: grid;
+    background-color: lightsteelblue;
+}
+
+h2 {
+    line-height: 1.25em;
+    color: rgb(58, 38, 104);
+    margin-bottom: unset;
+}
+
+hr {
+    max-width: 45%;
+    margin: 1em auto 1.5em auto;
+}
+
+p {
+    line-height: .75em;
+}
+
+section div {
+    margin-bottom: 2em;
+}
+
+section img {
+    place-self: center;
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 3px rgba(24,24,48);
+}
+
+
+.cards {
+    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 15px;
+    /* justify-items: center; */
+}
