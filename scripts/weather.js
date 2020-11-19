@@ -76,8 +76,59 @@ async function getWeather(town) {
 
     // string split?
 
+    updateForecast(lat, lon, stringOfNoParticularInterest);
+
 return;
 
+}
+
+/**
+ * 
+ * @param {float} lat 
+ * @param {float} lon 
+ * @param {String} unimportantString 
+ */
+
+function updateForecast(lat, lon, unimportantString) {
+    
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?"
+    + "lat=" + lat +"&lon=" + lon + "&appid=" + unimportantString;
+
+    var forecastData = getWeatherData(forecastURL);
+    
+    var currentURL = "https://api.openweathermap.org/data/2.5/weather?"
+    + "&units=imperial" + "&appid=" + unimportantString
+        + "&lat="+ lat + "&lon=" + lon;
+
+    var currentData = getWeatherData(currentURL);
+
+    var forecastTemps = [];
+
+    var forecastInfo = [];
+
+// Get today's date
+    var timeNow = new Date();
+
+// Get time of first (0th) forecast period
+    var firstForecast = forecastData.list[0].dt_txt
+
+// Compare today's date with date of forecast api period 0
+    if(timeNow.getDay < firstForecast) {
+        // if(firstForecast.)
+    }
+
+
+// If date is the same and time is before 1800, loop to next period
+// use high from standard "current" API
+
+
+
+    for(var i = 1; i < 6; i++){
+        var forecastDaySelectorString = "day" + i + " p";
+        document.querySelector(forecastDaySelectorString).innerHTML = "Updating...";
+    }
+
+    return;
 }
 
 function getWindChill(temp, windSpeed) {
