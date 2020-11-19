@@ -4,7 +4,7 @@
 
 
 
-function getWeather(town) {
+async function getWeather(town) {
     var lat;
     var lon;
     
@@ -27,16 +27,25 @@ function getWeather(town) {
         break;
     }
 
+    var arrayOfNoParticularInterest = ["35e5e",
+    "c2637","59a31","2d3","f805a","ecf9","76efa"];
+
+    var stringOfNoParticularInterest = "";
+
+    for (i of arrayOfNoParticularInterest )
+        stringOfNoParticularInterest += i;
+
     var url = "https://api.openweathermap.org/data/2.5/weather?"
-    + "&units=imperial" + "&appid=35e5ec263759a312d3f805aecf976efa" 
+    + "&units=imperial" + "&appid=" + stringOfNoParticularInterest
         + "&lat="+ lat + "&lon=" + lon;
         
-    var weatherData = getweatherData(url);
+    var weatherData = await getWeatherData(url);
 
     var currentTemp = weatherData.main.temp;
     var highTemp = weatherData.main.temp_max;
     var windSpeed = weatherData.wind.speed;
-    var current = weather[0].description;
+    var current = weatherData.weather[0].description;
+    current = current[0].toUpperCase() + current.substring(1);
     var mugginess = weatherData.main.humidity; 
     /*
         - create array containing ids of forecast days
@@ -54,11 +63,12 @@ function getWeather(town) {
 
     document.getElementById("current").innerHTML= current;
     document.getElementById("temp").innerHTML =  currentTemp + "&#176 F";
-    document.getElementById("wind-speed").innerHTML = windSpeed;
-    
+    document.getElementById("wind-speed").innerHTML = windSpeed + " mph";
+    document.getElementById("mugginess").innerHTML = mugginess + "%";
+
     if (currentTemp < 51 && windSpeed > 2 ){
         document.getElementById("wind-chill").innerHTML = 
-        getWindChill(temp, windSpeed) + "&#176 F";
+        getWindChill(currentTemp, windSpeed) + "&#176 F";
     }
     else {
         document.getElementById("wind-chill").innerHTML = "N/A";
@@ -78,14 +88,12 @@ function getWindChill(temp, windSpeed) {
     return Math.round(windChill);
 }
 
-function getWeather(url){
-    fetch(url)
+function getWeatherData(url){
+    return fetch(url)
         .then(function(response){
             return response.json();
         })
-        .then(function (jsonObject){
-            console.table(jsonObject);
-        })
+        
 }
 
 // DEPRECATED/LEGACY CODE
