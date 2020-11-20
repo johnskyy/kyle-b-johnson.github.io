@@ -58,7 +58,7 @@
   }
 
   .gallery-1:hover {
-      transform: scale(3) translate(125px, 125px);
+      transform: scale(1.75) translate(80px, 80px);
   }
 
   .gallery-2 {
@@ -66,7 +66,7 @@
     grid-column: 2/3;
   }
    .gallery-2:hover {
-      transform: scale(3) translate(0px, 125px);
+      transform: scale(1.75) translate(0px, 80px);
   }
 
   .gallery-3 {
@@ -74,7 +74,7 @@
     grid-column: 3/4;
   }
    .gallery-3:hover {
-      transform: scale(3) translate(-125px, 125px);
+      transform: scale(1.75) translate(-80px, 80px);
   }
 
   .gallery-4 {
@@ -82,7 +82,7 @@
     grid-column: 1/2;
   }
    .gallery-4:hover {
-      transform: scale(3) translate(125px, 0px);
+      transform: scale(1.75) translate(80px, 0px);
   }
 
   .gallery-5 {
@@ -90,7 +90,7 @@
     grid-column: 2/3;
   }
    .gallery-5:hover{
-      transform: scale(3) ;
+      transform: scale(1.75) ;
   }
 
   .gallery-6 {
@@ -98,14 +98,14 @@
     grid-column: 3/4;
   }
    .gallery-6:hover {
-      transform: scale(3) translate(-125px, 0px);
+      transform: scale(1.75) translate(-80px, 0px);
   }
   .gallery-7 {
     grid-row: 3/4;
     grid-column: 1/2;
   }
    .gallery-7:hover {
-      transform: scale(3) translate(125px, -125px);
+      transform: scale(1.75) translate(80px, -80px);
   }
 
   .gallery-8 {
@@ -113,7 +113,7 @@
     grid-column: 2/3;
   }
    .gallery-8:hover {
-      transform: scale(3) translate(0px, -125px);
+      transform: scale(1.75) translate(0px, -80px);
   }
 
   .gallery-9 {
@@ -121,7 +121,7 @@
     grid-column: 3/4;
   }
    .gallery-9:hover {
-      transform: scale(3) translate(-125px, -125px);
+      transform: scale(1.75) translate(-80px, -80px);
   }
 
   .gallery-10 {
@@ -129,7 +129,7 @@
     grid-column: 1/2;
   }
    .gallery-10:hover {
-      transform: scale(3) translate(175px, 175px);
+      transform: scale(1.75) translate(180px, 180px);
   }
 
 
