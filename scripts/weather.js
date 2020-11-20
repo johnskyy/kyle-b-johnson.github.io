@@ -89,44 +89,94 @@ return;
  * @param {String} unimportantString 
  */
 
-function updateForecast(lat, lon, unimportantString) {
-    
-    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?"
-    + "lat=" + lat +"&lon=" + lon + "&appid=" + unimportantString;
+async function updateForecast(lat, lon, unimportantString) {
 
-    var forecastData = getWeatherData(forecastURL);
+    // Get today's date
+    var timeNow = new Date();
+
+    // Store day names in easily accessible array
+    var forecastDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    // Initialize the current day of the week as index value
+    var forecastDayIndex = timeNow.getDay();
+
+    // Create names of days on top of each forecast day
+    for(var i = 1; i < 6; i++){
+        document.querySelector("#day"+i+">.dayOfWeek").innerHTML 
+            = forecastDays[(forecastDayIndex + (i -1) ) % 7]
+        var forecastTempSelectorString = "#day" + i + ">.forecastTemp";
+        document.querySelector(forecastTempSelectorString).innerHTML = "Updating...";
+    }
     
+    // Concatenate url to retrieve forecast data
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?"
+    + "&units=imperial" +"&lat=" + lat +"&lon=" + lon + "&appid=" 
+    + unimportantString;
+
+    // Fetch forecast data
+    var forecastData = await getWeatherData(forecastURL);
+    
+    // Concatenate url to retrieve current day's data
     var currentURL = "https://api.openweathermap.org/data/2.5/weather?"
     + "&units=imperial" + "&appid=" + unimportantString
         + "&lat="+ lat + "&lon=" + lon;
 
-    var currentData = getWeatherData(currentURL);
+    // Fetch current day data
+    var currentData = await getWeatherData(currentURL);
 
+    // Initialize array to hold forecast temps
     var forecastTemps = [];
+
+    // Get "today's" high temp from the current day data
+    forecastTemps[1] = currentData.main.temp_max;
+
+
+    var forecastDayObjectIndices = [];
 
     var forecastInfo = [];
 
-// Get today's date
-    var timeNow = new Date();
 
-// Get time of first (0th) forecast period
-    var firstForecast = forecastData.list[0].dt_txt
 
-// Compare today's date with date of forecast api period 0
-    if(timeNow.getDay < firstForecast) {
-        // if(firstForecast.)
+
+for(var i = 0; i < 8; i++) {
+    // Get time of first (0th) forecast period
+    var firstForecastDate = new Date(forecastData.list[i].dt_txt);
+
+    // Only use forecasts for the 1800 hour period
+    if(firstForecastDate.getHours() == 18) {
+        // Compare today's date with date of forecast api period 0
+        if(forecastDayIndex < firstForecastDate.getDay()) {
+            forecastDayObjectIndices[0] = null;
+            forecastDayObjectIndices[1] = 0;
+            for(var j = 2; i <6; i++) {
+                forecastDayObjectIndices[j] = (8*j) + i;
+            }
+        } 
+        // Compare today's date with date of forecast api period 0
+        else if (forecastDayIndex == firstForecastDate.getDay()){
+            forecastDayObjectIndices[0] = 0;
+            for(var j = 1; i <6; i++) {
+                forecastDayObjectIndices[i] = (8*i) + i;
+            }
+        }
+    } 
+}
+
+for(var i = 1; i < 6; i++){
+    var forecastListIndex = forecastDayObjectIndices[i-1]; 
+    if(forecastListIndex != null) {
+        var forecastTempSelectorString = "#day" + i + ">.forecastTemp";
+        
+        document.querySelector(forecastTempSelectorString).innerHTML 
+            = forecastData.list[forecastListIndex].main.temp;
+        document.querySelector("#day"+i+">.forecastSummary").innerHTML 
+            = forecastData.list[forecastListIndex].weather[0].main;
     }
+    else {
+        document.querySelector("#day"+i+">.forecastSummary").innerHTML 
+            = currentData.weather[0].description;
 
-
-// If date is the same and time is before 1800, loop to next period
-// use high from standard "current" API
-
-
-
-    for(var i = 1; i < 6; i++){
-        var forecastDaySelectorString = "day" + i + " p";
-        document.querySelector(forecastDaySelectorString).innerHTML = "Updating...";
-    }
+    }    
+}
 
     return;
 }
