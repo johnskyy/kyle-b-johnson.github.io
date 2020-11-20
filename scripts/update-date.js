@@ -5,7 +5,7 @@
     var thisMonth = monthNames[now.getMonth()];
     var day = now.getDate();
     var year = now.getFullYear();
-    var updatedDate = day.toString() + " " + thisMonth 
+    var updatedDate ="Last updated: " + day.toString() + " " + thisMonth 
                 + " " + year.toString();
 
     document.getElementById('datePlace').innerHTML = updatedDate;

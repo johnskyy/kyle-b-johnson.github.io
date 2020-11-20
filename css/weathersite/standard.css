@@ -20,7 +20,7 @@ main {
 ***
 *************************************************/
 
-p, #info-banner, email {
+p, #info-banner, email, #datePlace {
     font-family: 'Lexend Giga', Georgia, serif;
     line-height: 1.25em;
 }
@@ -29,8 +29,14 @@ header h1, nav ul, h2 {
     font-family: 'Special ELite', monospace;
 }
 
-footer p, email {
+footer p, email, #datePlace {
     color: #EEE8EC;
+}
+
+#datePlace {
+    line-height: 6em;
+    text-align: center;
+    grid-column: 1/-1;
 }
 
 /*************************************************

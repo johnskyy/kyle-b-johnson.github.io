@@ -167,7 +167,7 @@ for(var i = 1; i < 6; i++){
         var forecastTempSelectorString = "#day" + i + ">.forecastTemp";
         
         document.querySelector(forecastTempSelectorString).innerHTML 
-            = forecastData.list[forecastListIndex].main.temp;
+            = forecastData.list[forecastListIndex].main.temp + "&#176 F";
         document.querySelector("#day"+i+">.forecastSummary").innerHTML 
             = forecastData.list[forecastListIndex].weather[0].main;
     }
