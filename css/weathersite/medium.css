@@ -154,4 +154,13 @@
         grid-template-columns: repeat(5,1fr);
       }
 
+      @media only screen and (min-width: 45em) {
+
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+    }
+
+
 }

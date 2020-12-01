@@ -2,7 +2,8 @@
 // Fish Haven coords:  42.0370, -111.3959 
 // Soda Springs coords: 42.6547, -111.6037
 
-
+// Get today's date
+var timeNow = new Date();
 
 async function getWeather(town) {
     var lat;
@@ -39,61 +40,79 @@ async function getWeather(town) {
     + "&units=imperial" + "&appid=" + stringOfNoParticularInterest
         + "&lat="+ lat + "&lon=" + lon;
         
+     // Concatenate url to retrieve forecast data
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?"
+    + "&units=imperial" + "&lat=" + lat + "&lon=" + lon + "&appid=" 
+    + stringOfNoParticularInterest;
+
     var weatherData = await getWeatherData(url);
+
+    // Fetch forecast data
+    var forecastData = await getWeatherData(forecastURL);
 
     var currentTemp = weatherData.main.temp;
     var highTemp = weatherData.main.temp_max;
     var windSpeed = weatherData.wind.speed;
-    var current = weatherData.weather[0].description;
-    current = current[0].toUpperCase() + current.substring(1);
+    var current = makeCorrectCapital(weatherData.weather[0].description); 
     var mugginess = weatherData.main.humidity; 
-    /*
-        - create array containing ids of forecast days
-        - if current period (0) isDaytime = true:
-            - foreach in id array:
-                - for (int i; i %2 == 0; i += 1)
-                -innerHTML = ¿¿¿stringSplit???(
-                    weatherData.properties.periods[i].shortForecast 
-                    -> then)
 
-    if (weatherData.properties.periods[0].isDaytime) {
-
-
-    }*/
 
     document.getElementById("current").innerHTML= current;
     document.getElementById("temp").innerHTML =  currentTemp + "&#176 F";
     document.getElementById("wind-speed").innerHTML = windSpeed + " mph";
     document.getElementById("mugginess").innerHTML = mugginess + "%";
-
-    if (currentTemp < 51 && windSpeed > 2 ){
-        document.getElementById("wind-chill").innerHTML = 
-        getWindChill(currentTemp, windSpeed) + "&#176 F";
-    }
-    else {
-        document.getElementById("wind-chill").innerHTML = "N/A";
-    }
+    document.getElementById("wind-chill").innerHTML = getWindChill(currentTemp,windSpeed); 
 
     // string split?
 
-    updateForecast(lat, lon, stringOfNoParticularInterest);
+    updateForecast(weatherData, forecastData);
 
-return;
+    return;
 
 }
 
-/**
- * 
- * @param {float} lat 
- * @param {float} lon 
- * @param {String} unimportantString 
- */
+function updateForecast(currentData, forecastData) {
+    
+    //Update days of week to correct names
+    updateForecastDays(); 
 
-async function updateForecast(lat, lon, unimportantString) {
+    // Get index of proper forecast time window values
+    var dataIndex = getDataIndex(forecastData);
+    
+    // Get temps for respective days at specified time window
+    var forecastTemps = getForecastTemps(currentData,forecastData,dataIndex);
 
-    // Get today's date
-    var timeNow = new Date();
+    // Get weather summary for respective days at specified time window
+    var forecastText = getForecastText(currentData,forecastData,dataIndex);
 
+    // Get openWeather API forecast images
+    var forecastImgs = getForecastImg(currentData,forecastData, dataIndex);
+
+    var forecastImgURL = [];
+
+    for(var i = 0; i < 5; i++){
+        forecastImgs[i] = "http://openweathermap.org/img/wn/" 
+            + forecastImgs[i] + "@2x.png";
+    }
+
+    // Loops through each of the arrays for the proper values
+    for(var i = 1; i < 6; i++){
+        document.querySelector("#day" + i + ">.forecastTemp").innerHTML 
+            = forecastTemps[i-1] + "&#176 F";
+        document.querySelector("#day"+i+">.forecastSummary").innerHTML 
+            = forecastText[i-1]; 
+        document.querySelector("#day"+i+">img").setAttribute(
+            'src', forecastImgs[i-1] );
+    }
+
+    document.querySelectorAll("#forecast-imgs img")
+    .forEach((el) => (el.style.backgroundColor = "#658361"));
+        
+    return;
+}
+
+
+function updateForecastDays(){
     // Store day names in easily accessible array
     var forecastDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     // Initialize the current day of the week as index value
@@ -106,87 +125,110 @@ async function updateForecast(lat, lon, unimportantString) {
         var forecastTempSelectorString = "#day" + i + ">.forecastTemp";
         document.querySelector(forecastTempSelectorString).innerHTML = "Updating...";
     }
-    
-    // Concatenate url to retrieve forecast data
-    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?"
-    + "&units=imperial" +"&lat=" + lat +"&lon=" + lon + "&appid=" 
-    + unimportantString;
+}
 
-    // Fetch forecast data
-    var forecastData = await getWeatherData(forecastURL);
-    
-    // Concatenate url to retrieve current day's data
-    var currentURL = "https://api.openweathermap.org/data/2.5/weather?"
-    + "&units=imperial" + "&appid=" + unimportantString
-        + "&lat="+ lat + "&lon=" + lon;
+function getDataIndex(forecastData){
 
-    // Fetch current day data
-    var currentData = await getWeatherData(currentURL);
-
-    // Initialize array to hold forecast temps
-    var forecastTemps = [];
-
-    // Get "today's" high temp from the current day data
-    forecastTemps[1] = currentData.main.temp_max;
+    // Initialize the current day of the week as index value
+     var forecastDayIndex = timeNow.getDay();
 
 
     var forecastDayObjectIndices = [];
 
-    var forecastInfo = [];
+    // Compare and compute correct forecast data periods, 
+    // must be within the first 8 entries of the forecast data JSON object
+    for(var i = 0; i < 8; i++) {
+        // Get time of first (i-th) forecast period
+        var forecastPeriodDate = new Date(forecastData.list[i].dt_txt);
+        var forecastPeriodDay = forecastPeriodDate.getDay();
 
-
-
-
-for(var i = 0; i < 8; i++) {
-    // Get time of first (0th) forecast period
-    var firstForecastDate = new Date(forecastData.list[i].dt_txt);
-
-    // Only use forecasts for the 1800 hour period
-    if(firstForecastDate.getHours() == 18) {
-        // Compare today's date with date of forecast api period 0
-        if(forecastDayIndex < firstForecastDate.getDay()) {
-            forecastDayObjectIndices[0] = null;
-            forecastDayObjectIndices[1] = 0;
-            for(var j = 2; i <6; i++) {
-                forecastDayObjectIndices[j] = (8*j) + i;
-            }
+        // Only use forecasts for the 1800 hour period
+        if(forecastPeriodDate.getHours() == 18) {
+            // Compare today's date with date of forecast api period 0
+            if(forecastDayIndex < forecastPeriodDay) {
+                forecastDayObjectIndices[0] = -1;
+                forecastDayObjectIndices[1] = 0;
+                for(var j = 2; j < 5; j++) {
+                    forecastDayObjectIndices[j] = (8*j) - 1;
+                }
         } 
         // Compare today's date with date of forecast api period 0
-        else if (forecastDayIndex == firstForecastDate.getDay()){
-            forecastDayObjectIndices[0] = 0;
-            for(var j = 1; i <6; i++) {
-                forecastDayObjectIndices[i] = (8*i) + i;
+        else if (forecastDayIndex == forecastPeriodDate.getDay()){
+                forecastDayObjectIndices[0] = 0;
+                for(var j = 1; i < 5; i++) 
+                    forecastDayObjectIndices[j] = (8*j) + i;
             }
-        }
-    } 
-}
-
-for(var i = 1; i < 6; i++){
-    var forecastListIndex = forecastDayObjectIndices[i-1]; 
-    if(forecastListIndex != null) {
-        var forecastTempSelectorString = "#day" + i + ">.forecastTemp";
-        
-        document.querySelector(forecastTempSelectorString).innerHTML 
-            = forecastData.list[forecastListIndex].main.temp + "&#176 F";
-        document.querySelector("#day"+i+">.forecastSummary").innerHTML 
-            = forecastData.list[forecastListIndex].weather[0].main;
+        } 
     }
-    else {
-        document.querySelector("#day"+i+">.forecastSummary").innerHTML 
-            = currentData.weather[0].description;
 
-    }    
+    return forecastDayObjectIndices;
 }
 
-    return;
+function getForecastTemps(currentData, forecastData, dataIndex){
+    // Initialize array to hold forecast temps
+    var forecastTemps = [];
+
+    // Get "today's" high temp from the current day data
+    forecastTemps[0] = Math.round(currentData.main.temp_max);
+
+    for(var i = 0; i < 5; i++){
+        if (dataIndex[i] != -1)
+            forecastTemps[i] = Math.round(
+                forecastData.list[dataIndex[i]].main.temp);
+    }
+
+    return forecastTemps;
+}
+
+function getForecastText(currentData, forecastData, dataIndex){
+
+    var forecastInfo = [];
+
+    // Assigns current weather description in the event that 
+    // the forecast data starts after 6PM of the current day
+    forecastInfo[0] =makeCorrectCapital( currentData.weather[0].main);
+
+    for(var i = 0; i < 5; i++){
+        if (dataIndex[i] != -1)
+            forecastInfo[i] = 
+            makeCorrectCapital(forecastData.list[dataIndex[i]].weather[0].main);
+    }
+
+    return forecastInfo;
+}
+
+function getForecastImg(currentData, forecastData, dataIndex){
+
+    var forecastImgs = [];
+
+    // Assigns current weather description in the event that 
+    // the forecast data starts after 6PM of the current day
+    forecastImgs[0] = currentData.weather[0].icon;
+
+    for(var i = 0; i < 5; i++){
+        if (dataIndex[i] != -1)
+            forecastImgs[i] = forecastData.list[dataIndex[i]].weather[0].icon;
+    }
+
+    return forecastImgs;
 }
 
 function getWindChill(temp, windSpeed) {
-    var windChill = 35.74 + 
-    (0.6215 * parseInt(temp)) - (35.75 * (parseInt(windSpeed)**0.16)) 
-    + (0.4275 * parseInt(temp) * (parseInt(windSpeed)**0.16))
+    var windChill;
 
-    return Math.round(windChill);
+    if (temp < 51 && windSpeed > 2 ){
+        windChill = Math.round(35.74 + 
+        (0.6215 * parseInt(temp)) - (35.75 * (parseInt(windSpeed)**0.16)) 
+        + (0.4275 * parseInt(temp) * (parseInt(windSpeed)**0.16)));
+        windChill = windChill.toString() + "&#176 F";
+    }
+    else {
+        windChill = "N/A";
+    }
+
+    
+
+    return windChill;
 }
 
 function getWeatherData(url){
@@ -196,6 +238,16 @@ function getWeatherData(url){
         })
         
 }
+
+/**
+ * 
+ * @param {String} stringToCorrect 
+ */
+function makeCorrectCapital(stringToCorrect){
+    return stringToCorrect[0].toUpperCase() 
+        + stringToCorrect.substring(1);
+}
+
 
 // DEPRECATED/LEGACY CODE
 // 

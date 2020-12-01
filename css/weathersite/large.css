@@ -140,4 +140,7 @@
     max-width: 1080px;
 }
 
+  .town-cards {
+      grid-template-columns: repeat(3, 1fr);
+  }
 }

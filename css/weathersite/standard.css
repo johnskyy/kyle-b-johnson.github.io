@@ -20,9 +20,18 @@ main {
 ***
 *************************************************/
 
-p, #info-banner, email, #datePlace {
+p, #info-banner, email, #datePlace, #response {
     font-family: 'Lexend Giga', Georgia, serif;
     line-height: 1.25em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-family: 'Lexend Giga', Georgia, serif;
+    font-size: 1em;
 }
 
 header h1, nav ul, h2 {
@@ -39,6 +48,10 @@ footer p, email, #datePlace {
     grid-column: 1/-1;
 }
 
+#greeting {
+    text-align: center;
+}
+
 /*************************************************
 *** 
 ***     IMAGES/PICTURES Rules
@@ -46,11 +59,13 @@ footer p, email, #datePlace {
 *************************************************/
 
 footer img {
-    margin: 1.5em;
+    margin: 1em;
+    max-width: 350px;
 }
 
 #forecast-imgs img{
     margin: 16px auto 8px auto;
+    border-radius: 1em;
 }
 
 header img {
@@ -110,6 +125,10 @@ form fieldset {
     
 }
 
+form label.top {
+    line-height: 1.75em;
+}
+
 form legend {
     color: #445ba9;
     margin: 0 1rem;
@@ -120,11 +139,10 @@ form label.top, form div {
     display: block;
     padding-top: 1rem;
     color: #9c2c13;
-    font-size: .8rem;
+    font-size: 1 rem;
 }
 
 form label.top input, form label.top select {
-    appearance: none;
     display: block;
     font-size: 1rem;
     border: solid 1px #999;
@@ -159,6 +177,10 @@ form label.top input:required {
 
 form label.top input:required:valid {
     border-left: green solid 6px;
+}
+
+form type:range {
+    appearance: unset;
 }
 
 
@@ -203,6 +225,54 @@ img[data-src] {
     filter: blur(3px);
 }
  
+/*************************************************
+***
+***     Home page card formatting
+***
+***
+*************************************************/
+
+section {
+    border: 1px solid rgb(43,43,86);
+    box-shadow: 5px 5px 5px rgba(24,24,48);
+    /* place-self: center; */
+    display: grid;
+    background-color: lightsteelblue;
+}
+
+h2 {
+    line-height: 1.25em;
+    color: rgb(58, 38, 104);
+    margin-bottom: unset;
+}
+
+hr {
+    max-width: 45%;
+    margin: 1em auto 1.5em auto;
+}
+
+p {
+    line-height: 1em;
+}
+
+section div {
+    margin-bottom: 2em;
+}
+
+section img {
+    place-self: center;
+    margin-bottom: 15px;
+    box-shadow: 5px 5px 3px rgba(24,24,48);
+}
+
+
+.cards {
+    
+    display: grid;
+    grid-gap: 15px;
+    /* justify-items: center; */
+}
+
 
 /*************************************************/
 
@@ -312,7 +382,7 @@ nav {
 
 .light-background {
     background-color: #EEE8EC;
-    padding: 5px 0;
+    padding: 1em ;
 }
 
 footer {
@@ -323,5 +393,12 @@ footer {
 #contact {
     margin: 1vh 1em;
     /* max-width: 45%; */
+}
+
+#response {
+    background-color: #EEE8EC;
+    padding: 1em ;
+    text-align: center;
+    text-justify: auto;
 }
 
