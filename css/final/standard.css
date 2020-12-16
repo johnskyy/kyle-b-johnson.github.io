@@ -32,7 +32,7 @@ form legend {
 form label.top, form div {
   display: block;
   padding-top: 1rem;
-  font-size: 1 rem;
+  font-size: 1rem;
 }
 
 form label.top input, form label.top select {
@@ -69,10 +69,6 @@ form label.top input:required {
 
 form label.top input:required:valid {
   border-left: green solid 6px;
-}
-
-form type:range {
-  appearance: unset;
 }
 
 
