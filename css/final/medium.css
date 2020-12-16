@@ -1,0 +1,47 @@
+@media only screen and (min-width: 45em){
+    #sidebar {
+        width: 25%;
+        position: fixed;
+        z-index: 1;
+        overflow-x: hidden;
+        height: 100vh;   
+    }
+
+    #sidebar img {
+        margin: 0px 1rem;
+        text-align: center;
+    }
+
+    #Weather {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);  
+        gap: 1em; 
+    }
+
+    #CurrentWeather {
+        padding: .25rem 0px;
+        margin: 2rem;
+    }
+   
+
+    .NavBox {
+        /* border: 2px dashed #777; */
+        margin: 2rem 2rem 5rem 2rem;
+        text-align: left;
+    }
+
+    #sidebar ul {
+        padding: unset;
+    }
+
+    #FooterBox {
+       
+      }
+
+    main, footer {
+        max-width: 75%;
+        margin: 0 5px 0 25%;
+      }
+
+} 

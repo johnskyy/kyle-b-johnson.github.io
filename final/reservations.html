@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make a Reservation | Scoots Rentals</title>
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="../css/final/standard.css" />
+    <link rel="stylesheet" href="../css/final/medium.css" />
+    <link rel="stylesheet" href="../css/final/large.css" />
+    <link rel="shortcut icon" href="../images/scoots/favicon.png" />
+</head>
+<body>
+  <header>
+  </header>
+  <div id="sidebar">
+  <img
+      src="../images/scoots/logo_transparent1.jpg"
+      alt="Logo for the Scoots rental company"
+    />
+    <nav class="box">
+      <ul>
+        <li><a href="#">&#9776; Menu</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="#">Reservations</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <div id="social"></div>
+
+  </div>
+    <main>
+      <form method="GET" action="confirmation.html">
+        <fieldset>
+          <legend>Contact Information</legend>
+            <label class="top">Full Name*<input type="text" name="fname" pattern="[a-z A-Z]+" required></label>
+            <label class="top">Email Address*<input type="email" name="email" placeholder="demo@example.com" required></label>
+            <label class="top">Phone Number*<br><em>Please include country code</em><input type="tel" name="phone" required></label>
+            <label class="top">Home state/Country<input type="text" name="home"></label>
+          </fieldset>
+        <fieldset>
+          <legend>Reservation Information</legend>
+            <label class="top">Date(s) requested<input type="date"></label>
+            <div>Period</div>
+            <label class="sbs"><input type="radio"> Half Day (3 Hours)</label>
+            <label class="sbs"><input type="radio"> Full Day</label>
+            <label class="top">
+              Rental Type
+              <select name="type">
+              <option disabled>Honda Motor Scooters</option>
+              <option >Honda Metropan (49cc) - 1 person</option>
+              <option >Honda Dio (110cc) - 2 person</option>
+              <option >Honda PCX150 (149cc) - 2 person</option>
+              <option disabled>ATV Side-by-Side</option>
+              <option >Honda Pioneer 1000</option>
+              <option disabled>Jeep Rentals</option>
+              <option >4-door Jeep Wrangler - manual with A/C - 5 people max</option>
+              <option >2-door Jeep Wrangler - open air - manual - 4 people max</option>
+              </select>
+              </label>
+            <label class="top">Number requested<input type="number"></label>
+        </fieldset>
+        <fieldset>
+          <legend>Extra Information</legend>
+          <label class="top">Cruise Line<input type="text"></label>
+          <label class="top">Special Requests<input type="text"></label>
+        </fieldset>
+
+        <input type="submit" value="Make My Reservation" class="submitBtn">
+
+      </form>
+
+    </main>
+
+    <footer>
+      <br />
+      <hr>
+      <br />
+      <span id="datePlace"></span>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+          google: {
+            families: [
+              'Titillium Web', 'Raleway'
+            ]
+          }
+        })
+    </script>
+    <script src="../scripts/update-date.js"></script>
+</body>
+</html>

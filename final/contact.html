@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us! | Scoots Rentals</title>
+    <link rel="stylesheet" href="../normalize.css" />
+    <link rel="stylesheet" href="../css/final/standard.css" />
+    <link rel="stylesheet" href="../css/final/medium.css" />
+    <link rel="stylesheet" href="../css/final/large.css" />
+    <link rel="shortcut icon" href="../images/scoots/favicon.png" />
+</head>
+<body>
+  <header>
+  </header>
+  <div id="sidebar">
+  <img
+      src="../images/scoots/logo_transparent1.jpg"
+      alt="Logo for the Scoots rental company"
+    />
+    <nav class="box">
+      <ul>
+        <li><a href="#">&#9776; Menu</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rentals.html">Rentals</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <div id="social"></div>
+
+  </div>
+    <main>
+
+      <!-- comment/contact form -->
+      <form>
+      <fieldset>
+        <legend>Comments? Send 'em here!</legend>
+        <label class="top">Name<input type="text" name="fname"></label>
+        <label class="top">Email<input type="email" name="email"></label>
+        <label class="top">Comment<input type="text"></label>
+      </fieldset>
+      <input type="submit" value="Send Comment" class="submitBtn">
+    </form>
+
+      <!-- contact info & gMaps integration -->
+      <h3>Where to find us</h3>
+      <div id="maps">
+        <iframe id="northMap"
+  width="600"
+  height="450"
+  frameborder="0" style="border:0" allowfullscreen>
+</iframe>
+
+<iframe id="southMap"
+  width="600"
+  height="450"
+  frameborder="0" style="border:0" allowfullscreen>
+</iframe>
+      </div>
+
+    </main>
+
+    <footer>
+      <br />
+      <hr>
+      <br />
+      <span id="datePlace">
+    </footer>
+
+    <script src="../scripts/gmaps.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+          google: {
+            families: [
+              'Titillium Web', 'Raleway'
+            ]
+          }
+        })
+    </script>
+    <script src="../scripts/update-date.js"></script>
+</body>
+</html>

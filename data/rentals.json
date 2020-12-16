@@ -1,0 +1,58 @@
+{
+  "scooters": [
+    {
+      "name": "Honda Metro Scooter",
+      "passengers": 1,
+      "halfWithRes": 20,
+      "fullWithRes": 30,
+      "halfWalkIn": 25,
+      "fullWalkIn": 35
+    },
+
+    {
+      "name": "Honda Dio Scooter",
+      "passengers": 2,
+      "halfWithRes": 30,
+      "fullWithRes": 40,
+      "halfWalkIn": 35,
+      "fullWalkIn": 45
+    },
+
+    {
+      "name": "Honda PCX150 Scooter",
+      "passengers": 2,
+      "halfWithRes": 40,
+      "fullWithRes": 50,
+      "halfWalkIn": 45,
+      "fullWalkIn": 55
+    }
+  ],
+
+  "ATV": {
+    "name": "Honda Pioneer ATV",
+    "passengers": 4,
+    "halfWithRes": 50,
+    "fullWithRes": 70,
+    "halfWalkIn": 60,
+    "fullWalkIn": 80
+  },
+
+  "jeep": [
+    {
+      "name": "Jeep Wrangler - 4 door",
+      "passengers": 5,
+      "halfWithRes": 70,
+      "fullWithRes": 100,
+      "halfWalkIn": 80,
+      "fullWalkIn": 125
+    },
+    {
+      "name": "Jeep Wrangler - 2 door",
+      "passengers": 4,
+      "halfWithRes": 60,
+      "fullWithRes": 85,
+      "halfWalkIn": 70,
+      "fullWalkIn": 90
+    }
+  ]
+}

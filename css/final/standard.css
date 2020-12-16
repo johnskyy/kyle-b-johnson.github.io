@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;1,300&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200&display=swap');
+
+/*************************************************
+*** 
+***     Form Formatting Rules
+***
+*************************************************/
+form {
+  
+  border-radius: 10px;
+}
+
+form fieldset {
+  margin: 2rem 0;
+  border: 3px solid #09999E;
+  border-radius: 10px;
+  padding: .5rem 2%;
+  background-color: rgba(35,180,199,.6);
+}
+
+form label.top {
+  line-height: 1.75em;
+}
+
+form legend {
+  font-size: 1.5rem;
+  color: black;
+  margin: 0 1rem;
+  padding: 0 .5rem;
+}
+
+form label.top, form div {
+  display: block;
+  padding-top: 1rem;
+  font-size: 1 rem;
+}
+
+form label.top input, form label.top select {
+  display: block;
+  font-size: 1rem;
+  border: solid 1px #999;
+  border-radius: 4px;
+  padding: .75rem;
+  color: #555;
+  width: 100%;
+  max-width: 20rem;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+form label.sbs {
+  display: block;
+  padding: .75rem 0;
+}
+
+form input.submitBtn {
+  border: none;
+  background-color: #0F79BA;
+  color: white;
+  border-radius: 1rem;
+  padding: .75rem 1.5rem;
+  margin: 0 0 2rem 2%;
+  width: 96%;
+  max-width: 20rem;
+}
+
+form label.top input:required {
+  border-left: red solid 6px;
+}
+
+form label.top input:required:valid {
+  border-left: green solid 6px;
+}
+
+form type:range {
+  appearance: unset;
+}
+
+
+
+nav a, h1, h2, h3, legend {
+  font-family: 'Titillium Web', Arial, sans-serif;
+}
+
+nav a {
+  text-decoration: none;
+  line-height: 2rem;
+  font-size: 1.5em;
+  color: #156
+}
+
+nav ul {
+  list-style: none;
+  line-height: 2.5rem;
+  padding: unset;
+}
+
+#sidebar {
+  text-align: center;
+}
+
+#social img{
+  max-width: 2rem;
+  border-radius: 5px;
+
+}
+
+#CurrentWeather, #Weather {
+  text-align: center;
+}
+
+section, #CurrentWeather {
+  background-color: #09999E;
+  color: white;
+  border-radius: 1rem;
+  max-width: 50%;
+  margin: 0px auto;
+  padding: 1rem;
+}
+
+section p, #CurrentWeather p {
+  line-height: 1rem;
+}
+
+/* #Weather section {
+  text-align: center;
+} */
+
+footer {
+  padding: 2rem;
+  text-align: center;
+}
+
+p, label {
+  line-height: 1.5rem;
+  font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+#action img {
+  /* max-height 70vh; */
+  /* max-height: 75vh; */
+  max-width: 100%;
+  z-index: 0;
+  overflow-x: hidden;
+  /* border-radius: 2em; */
+}
+
+#action p {
+  background-color: rgba(132, 168, 154, 0.7);
+  z-index: 99;
+}
